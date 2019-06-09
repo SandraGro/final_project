@@ -1,16 +1,15 @@
 import React from 'react';
 //Components
-import Login from './Login/Login';
-import Registro from './Registro/Registro';
+import Header from './Header';
+import Slider from './Slider';
 //CSS
 import './App.css';
 
 function App() {
-  const myName = 'Sandra';
   return (
     <div className="App">
-      <Login name={myName}/>
-      <Registro />
+      <Header />
+      <Slider />
     </div>
   );
 }

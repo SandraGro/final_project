@@ -1,21 +1,25 @@
 import React from 'react';
 //Components
 import Header from './Header';
-import Slider from './Slider';
-import SelectorHome from './SelectorHome';
+import Home from './Home/Home';
 import Footer from './Footer';
+import BrowserRouter from 'react-router-dom/BrowserRouter';
+import Route from 'react-router-dom/Route';
 
 //CSS
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Slider />
-      <SelectorHome/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Route component={Header} />
+      <Route exact path="/" component={Home} />
+      {/* <Route path="/breakfast" component={Breakfast} />
+      <Route path="/breakfast/reviewId" component={Breakfast} /> */}
+      <Route component={Footer} />
+
+    </BrowserRouter>
+
   );
 }
 

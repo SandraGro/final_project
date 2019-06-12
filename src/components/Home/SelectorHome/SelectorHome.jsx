@@ -1,21 +1,20 @@
 import React from "react";
 import { Card, CardDeck } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom/';
-// import Link from 'react-router-dom/Link';
+import Link from 'react-router-dom/Link';
 import './SelectorHome.css';
 
 const SelectorHome = () => (
   <div className="padd">
     <p className="title">¿Qué estás buscando?</p>
     <CardDeck>
-      {/* <Link to ="/"> */}
       <Card>
-<Card.Img variant="top" src="/assets/breakfast2.jpg" onClick = {<Redirect to="/list" />}/>
+      <Link className="links" to ="/" >
+<Card.Img variant="top" src="/assets/breakfast2.jpg" />
         <Card.Footer>
           <Card.Title className="category">Breakfast</Card.Title>
         </Card.Footer>
+      </Link>
       </Card>
-      {/* </Link> */}
       <Card>
         <Card.Img variant="top" src="/assets/lunch1.jpg" />
         <Card.Footer>

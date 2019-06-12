@@ -5,9 +5,16 @@
 .title{
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;
+    text-align: center;
 }
 
 .category{
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
 }
+
+a.links{
+    text-decoration: none;
+    color: black;
+}
+

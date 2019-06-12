@@ -1,7 +1,10 @@
 .title-breakfast{
-    background-color: black;
-    height: 170px;
+    background-color: lightgray;
+    background: #bac64a url("/assets/food-pattern-15.png");
     color: aliceblue;
-    text-align: center;
+    height: 170px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 4rem;
     padding: 50px;
+    text-align: center;
 }

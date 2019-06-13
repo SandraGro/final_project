@@ -14,7 +14,7 @@ class Breakfast extends Component {
     render() {
         return (
             <>
-            <Title/>
+            <Title titulo="Breakfast"/>
             {this.state.Restaurants.map((restaurant) =>
                 <Restaurants key={restaurant} />
             )}

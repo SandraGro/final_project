@@ -8,7 +8,7 @@ const SelectorHome = () => (
     <p className="title">¿Qué estás buscando?</p>
     <CardDeck>
       <Card>
-      <Link className="links" to ="./Breakfast" >
+      <Link className="links" to ="./breakfast" >
 <Card.Img variant="top" src="/assets/breakfast2.jpg" />
         <Card.Footer>
           <Card.Title className="category">Breakfast</Card.Title>

@@ -5,7 +5,7 @@ import Home from './Home/Home';
 import Footer from './Footer';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
-import Breakfast from './Breakfast/Breakfast';
+import RestauranList from './RestaurantList/RestaurantList';
 
 //CSS
 import './App.css';
@@ -15,8 +15,8 @@ function App() {
     <BrowserRouter>
       <Route component={Header} />
       <Route exact path="/" component={Home} />
-      <Route path="/breakfast" component={Breakfast} />
-      <Route path="/breakfast/reviewId" component={Breakfast} /> 
+      <Route path="/breakfast" component={RestauranList} />
+      <Route path="/breakfast/reviewId" component={RestauranList} /> 
       <Route component={Footer} />
 
     </BrowserRouter>

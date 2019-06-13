@@ -9,6 +9,7 @@ import RestauranList from './RestaurantList/RestaurantList';
 
 //CSS
 import './App.css';
+import RestaurantDetails from './RestaurantDetails/RestaurantDetails';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Route component={Header} />
       <Route exact path="/" component={Home} />
       <Route path="/breakfast" component={RestauranList} />
-      <Route path="/breakfast/reviewId" component={RestauranList} /> 
+      <Route path="/breakfast/:reviewId" component={RestaurantDetails} /> 
       <Route component={Footer} />
 
     </BrowserRouter>

@@ -9,7 +9,7 @@ class Restaurant extends Component {
   render() {
     return (
       <>
-        <Link className="links" to="/home" >
+        <Link className="links" to="/Breakfast/superSalds">
           <Container className="container">
             <Row>
               <Col xs={2} className="margin-img">

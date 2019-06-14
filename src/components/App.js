@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Route component={Header} />
       <Route exact path="/" component={Home} />
-      <Route path="/breakfast" component={RestauranList} />
+      <Route exact path="/breakfast" component={RestauranList} />
       <Route path="/breakfast/:reviewId" component={RestaurantDetails} /> 
       <Route component={Footer} />
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Form, Button, Nav, Navbar, FormControl } from 'react-bootstrap';
+import { Form, Nav, Navbar, FormControl } from 'react-bootstrap';
 import Link from 'react-router-dom/Link';
+import Login from '../Login';
 import './Header.css';
 
 class Header extends Component {
@@ -22,8 +23,8 @@ class Header extends Component {
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Log in</Button>
         </Form>
+        <Login/>
       </Navbar>);
   }
 }

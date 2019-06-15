@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from 'google-map-react';
+import StarRatingComponent from 'react-star-rating-component';
+import './Location.css';
 
 class Location extends Component {
   constructor() {
@@ -14,7 +16,7 @@ class Location extends Component {
   }
   render() {
     return (
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div className="map">
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyBG43kiQGWcUW431q9ExwLxc7IVM97i9Co' }}
           defaultCenter={this.state.center}
@@ -22,6 +24,18 @@ class Location extends Component {
         >
 
         </GoogleMapReact>
+        <div>
+          <StarRatingComponent
+            name="rate1"
+            starCount={5}
+            value={4.5}
+            editing={false}
+          />
+        </div>
+        <small>
+          {' '}
+          Dirección Calle falsa #123 .{' '}
+        </small>
       </div>
     );
   }

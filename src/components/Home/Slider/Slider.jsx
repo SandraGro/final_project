@@ -20,7 +20,7 @@ class Slider extends Component {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/assets/image-8-1170x658.jpg"
+          src="/assets/healthy01.jpg"
           alt="Third slide"
         />
 

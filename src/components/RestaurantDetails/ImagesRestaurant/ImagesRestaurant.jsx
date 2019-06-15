@@ -1,29 +1,26 @@
 import React, { Component } from "react";
-import { Card, CardGroup, Col, Row } from 'react-bootstrap';
-import Location from '../Location/Location';
+import { Card, CardGroup } from 'react-bootstrap';
+import './ImagesRestaurant.css'
+
 
 class ImagesRestaurant extends Component {
   render() {
     return (
       <>
-        <Row>
-          <Col xs={8} className="margin-img">
-            <CardGroup>
-              <Card>
-                <Card.Img variant="top" src="/assets/breakfast3.jpg" />
-              </Card>
-              <Card>
-                <Card.Img variant="top" src="/assets/breakfast3.jpg" />
-              </Card>
-              <Card>
-                <Card.Img variant="top" src="/assets/breakfast3.jpg" />
-              </Card>
-            </CardGroup>
-          </Col>
-          <Col xs={4}>    
-            <Location/>
-          </Col>
-        </Row>
+        <br />
+        <div className="images-rest">
+          <CardGroup>
+            <Card>
+              <Card.Img variant="top" src="/assets/breakfast3.jpg" />
+            </Card>
+            <Card>
+              <Card.Img variant="top" src="/assets/breakfast3.jpg" />
+            </Card>
+            <Card>
+              <Card.Img variant="top" src="/assets/breakfast3.jpg" />
+            </Card>
+          </CardGroup>
+        </div>
       </>
 
     );

@@ -5,7 +5,8 @@ import Home from './Home/Home';
 import Footer from './Footer';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
-import RestauranList from './RestaurantList/RestaurantList';
+import RestauranList from './RestaurantList';
+import Search from './Search/'
 
 //CSS
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/breakfast" component={RestauranList} />
       <Route path="/breakfast/:reviewId" component={RestaurantDetails} /> 
+      <Route exact path="/results" component={Search} />
       <Route component={Footer} />
 
     </BrowserRouter>

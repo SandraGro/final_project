@@ -3,6 +3,7 @@ import { Form, Nav, Navbar, FormControl } from 'react-bootstrap';
 import Link from 'react-router-dom/Link';
 import Login from '../Login';
 import './Header.css';
+import SignUp from "../SignUp/SignUp";
 
 class Header extends Component {
   render() {
@@ -15,16 +16,21 @@ class Header extends Component {
           <Link className="links" to ="/breakfast" >
           <Nav.Link href="#home" className="padd-right" >Breakfast</Nav.Link>
           </Link>
-          <Link className="links" to ="/Lunch" >
+          <Link className="links" to ="/lunch" >
           <Nav.Link href="#features" className="padd-right">Lunch</Nav.Link>
           </Link>
+          <Link className="links" to ="/dinner" >
           <Nav.Link href="#pricing" className="padd-right">Dinner</Nav.Link>
+          </Link>
+          <Link className="links" to ="/dessert" >
           <Nav.Link href="#pricing" className="padd-right">Desserts</Nav.Link>
+          </Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
         </Form>
         <Login/>
+        <SignUp/>
       </Navbar>);
   }
 }

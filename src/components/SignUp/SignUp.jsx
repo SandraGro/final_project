@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Form, Button, Modal } from 'react-bootstrap';
-import './Login.css';
+import './SignUp.css';
 
-
-
-class Login extends Component {
+class SignUp extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -27,16 +25,23 @@ class Login extends Component {
   render() {
     return (
       <>
-        <Button variant="primary" className="login-button" onClick={this.handleShow}>
-          LogIn
+        <Button variant="primary" onClick={this.handleShow}>
+          SignUp
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title className="title-logIn">Log In</Modal.Title>
+            <Modal.Title className="title-logIn">Sign Up</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
+              <Form.Label>First name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="First name"
+                defaultValue="Mark"
+              />
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
@@ -49,11 +54,9 @@ class Login extends Component {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
-              <Form.Group controlId="formBasicChecbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
+             
               <Button variant="secondary" type="submit">
-                Log In
+                Sign Up
   </Button>
             </Form>
           </Modal.Body>
@@ -72,4 +75,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default SignUp;

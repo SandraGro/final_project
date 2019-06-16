@@ -16,7 +16,7 @@ class RestaurantList extends Component {
         return (
             <>
                 <Link className="links" to="/" >
-                    <Title titulo="Breakfast" />
+                    <Title titulo={this.props.match.params.category} />
                     {this.state.Restaurant.map((restaurant) =>
                         <Restaurant key={restaurant} />
                     )}

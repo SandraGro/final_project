@@ -3,7 +3,7 @@ import Restaurant from "../RestaurantList/Restaurant";
 
 class Search extends Component {
   render() {
-    return <Restaurant />;
+    return <Restaurant/>;
   }
 }
 

@@ -9,33 +9,32 @@ class Restaurant extends Component {
   render() {
     return (
       <>
-        <Link className="links" to="/Breakfast/superSalds">
+        <Link className="links" to="/breakfast/superSalads">
           <Container className="container">
             <Row>
               <Col xs={2} className="margin-img">
-                <Card.Img variant="top" src="/assets/breakfast3.jpg" className="images" />
+                <Card.Img variant="top" src={this.props.info.image} className="images" />
               </Col>
               <Col xs={10}>
                 <Card className="card">
-                  <Card.Header className="card-header"><h5>Nombre del Restaurante</h5>
+                  <Card.Header className="card-header"><h5>{this.props.info.name}</h5>
                     <div>
                       <StarRatingComponent
                         name="rate1"
                         starCount={5}
-                        value={4.5}
+                        value={this.props.info.rating}
                         editing={false}
                       />
                     </div>
                     <small>
-                      {' '}
-                      Dirección Calle falsa #123 .{' '}
+                    {this.props.info.address}
                     </small>
                   </Card.Header>
                   <Card.Body>
                     <blockquote className="blockquote mb-0">
                       <footer className="blockquote-footer">
-                        Aquí va la última reseña blah blah blah <br />
-                        <cite title="Source Title">Autor</cite>
+                      {this.props.info.last_review['review']} <br />
+                        <cite title="Source Title"> {this.props.info.last_review['author']}</cite>
                       </footer>
                     </blockquote>
                   </Card.Body>

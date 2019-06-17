@@ -5,7 +5,7 @@ import Home from './Home/Home';
 import Footer from './Footer';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
-import RestauranList from './RestaurantList';
+import RestaurantList from './RestaurantList';
 import Search from './Search/'
 
 //CSS
@@ -17,8 +17,8 @@ function App() {
     <BrowserRouter>
       <Route component={Header} />
       <Route exact path="/" component={Home} />
-      <Route exact path="/:category" component={RestauranList} />
-      <Route path="/breakfast/:reviewId" component={RestaurantDetails} /> 
+      <Route exact path="/:category" component={RestaurantList} />
+      <Route path="/:category/:restaurantId" component={RestaurantDetails} /> 
       <Route exact path="/results" component={Search} />
       <Route component={Footer} />
 

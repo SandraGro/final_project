@@ -8,25 +8,34 @@ class Reviews extends Component {
   render() {
     return (
       <>
-        <Card className="card">
-          <Card.Body>
-            <blockquote className="blockquote mb-0">
-              <footer className="blockquote-footer">
-                Aquí va la reseña blah blah blah reseña blah blah blah reseña blah blah blah reseña blah blah blah reseña blah blah blah <br />
-                <cite title="Source Title">Autor de la reseña</cite>
-                <span className="rate">
-                  <StarRatingComponent
-                    name="rate1"
-                    starCount={5}
-                    value={4.5}
-                    editing={false}
-                  />
-                </span>
-              </footer>
-            </blockquote>
-          </Card.Body>
-        </Card>
-        <hr/>
+        {
+          this.props.info.map((review) => {
+            return (
+              <>
+                <Card className="card">
+                  <Card.Body>
+                    <blockquote className="blockquote mb-0">
+                      <footer className="blockquote-footer">
+                        {review.review}
+                        <br />
+                        <cite title="Source Title">{review.author}</cite>
+                        <span className="rate">
+                          <StarRatingComponent
+                            name="rate1"
+                            starCount={5}
+                            value={review.rating}
+                            editing={false}
+                          />
+                        </span>
+                      </footer>
+                    </blockquote>
+                  </Card.Body>
+                </Card>
+                <hr />
+              </>
+            )
+          })
+        }
       </>
     );
   }

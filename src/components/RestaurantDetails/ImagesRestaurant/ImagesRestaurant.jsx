@@ -10,15 +10,13 @@ class ImagesRestaurant extends Component {
         <br />
         <div className="images-rest">
           <CardGroup>
-            <Card>
-              <Card.Img variant="top" src="/assets/breakfast3.jpg" />
-            </Card>
-            <Card>
-              <Card.Img variant="top" src="/assets/breakfast3.jpg" />
-            </Card>
-            <Card>
-              <Card.Img variant="top" src="/assets/breakfast3.jpg" />
-            </Card>
+            {
+              this.props.imgs.map((img) => {
+                return <Card>
+                  <Card.Img variant="top" src={img}/>
+                </Card>
+              })
+            }
           </CardGroup>
         </div>
       </>

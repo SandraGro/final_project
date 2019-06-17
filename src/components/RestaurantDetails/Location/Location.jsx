@@ -28,13 +28,12 @@ class Location extends Component {
           <StarRatingComponent
             name="rate1"
             starCount={5}
-            value={4.5}
+            value={this.props.rating}
             editing={false}
           />
         </div>
         <small>
-          {' '}
-          Dirección Calle falsa #123 .{' '}
+          {this.props.address}
         </small>
       </div>
     );

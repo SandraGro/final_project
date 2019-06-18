@@ -33,14 +33,15 @@ class Header extends Component {
           <Nav className="justify-content-end nav-flex">
             {
               this.state.categories.map((category) =>
-                <Link className="links" to={"/"+category['path']} >
-                  <Nav.Link href={"/"+category['path']} className="padd-right" >{category['title']}</Nav.Link>
+                <Link className="links" to={"/" + category['path']} >
+                  <Nav.Link href={"/" + category['path']} className="padd-right" >{category['title']}</Nav.Link>
                 </Link>
               )
             }
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <i class="fas fa-search"></i>
           </Form>
           <Login />
           <SignUp />

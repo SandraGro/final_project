@@ -17,6 +17,7 @@ class RestaurantList extends Component {
 
     getRestaurants() {
         let path = "restaurants/" + this.props.match.params.category
+        // path = "search?q=loqueseaa"
         getData(path).then(restaurants => this.setState({ restaurants }))
     }
 
@@ -36,7 +37,7 @@ class RestaurantList extends Component {
                 <Link className="links" to="/" >
                     <Title titulo={this.props.match.params.category} />
                     {this.state.restaurants.map((restaurant) =>
-                        <Restaurant key={restaurant.id} info={restaurant} />
+                        <Restaurant key={restaurant.id} info={restaurant} category={this.props.match.params.category} />
                     )}
                 </Link>
             </>

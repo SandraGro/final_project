@@ -30,8 +30,8 @@ class RestaurantDetails extends Component {
   componentDidMount() {
     this.getRestaurantDetails();
   }
-
   render() {
+    console.log(this.state.restaurant.name);
     return (
       <>
         <Title titulo={this.state.restaurant.name} />

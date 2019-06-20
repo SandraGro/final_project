@@ -39,8 +39,8 @@ class Header extends Component {
               )
             }
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Form inline action="/search">
+            <FormControl type="text" name="q" placeholder="Search" className="mr-sm-2" />
             <i class="fas fa-search"></i>
           </Form>
           <Login />

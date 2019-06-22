@@ -26,25 +26,30 @@ class Header extends Component {
   render() {
     return (
       <>
-        <Navbar bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Link className="links" to="/" >
             <img src="/assets/logo-01.png" alt="let's eat" />
           </Link>
-          <Nav className="justify-content-end nav-flex">
-            {
-              this.state.categories.map((category) =>
-                <Link className="links" to={"/" + category['path']} >
-                  <Nav.Link href={"/" + category['path']} className="padd-right" >{category['title']}</Nav.Link>
-                </Link>
-              )
-            }
-          </Nav>
-          <Form inline action="/search">
-            <FormControl type="text" name="q" placeholder="Search" className="mr-sm-2" />
-            <i class="fas fa-search"></i>
-          </Form>
-          <Login />
-          <SignUp />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="justify-content-end nav-flex">
+              {
+                this.state.categories.map((category) =>
+                  <Link className="links" to={"/" + category['path']} >
+                    <Nav.Link href={"/" + category['path']} className="padd-right" >{category['title']}</Nav.Link>
+                  </Link>
+                )
+              }
+            </Nav>
+            <div>
+            <Form inline action="/search">
+              <FormControl type="text" name="q" placeholder="Search" className="mr-sm-2" />
+              <i class="fas fa-search"></i>
+            </Form>
+            </div>
+            <Login />
+            <SignUp />
+          </Navbar.Collapse>
         </Navbar>
       </>
     );

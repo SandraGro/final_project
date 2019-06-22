@@ -30,7 +30,7 @@ class SelectorHome extends Component {
             {
               this.state.categories.map((category) => {
                 return <Card>
-                  <Link className="links" to={category['path']} >
+                  <Link className="links" to={'/restaurants/'+ category['path']} >
                     <Card.Img variant="top" src={category['image']} />
                     <Card.Footer>
                       <Card.Title className="category">{category['title']}</Card.Title>

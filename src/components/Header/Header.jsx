@@ -35,8 +35,8 @@ class Header extends Component {
             <Nav className="justify-content-end nav-flex">
               {
                 this.state.categories.map((category) =>
-                  <Link className="links" to={"/" + category['path']} >
-                    <Nav.Link href={"/" + category['path']} className="padd-right" >{category['title']}</Nav.Link>
+                  <Link className="links" to={"/restaurants/" + category['path']} >
+                    <Nav.Link href={"/restaurants/" + category['path']} className="padd-right" >{category['title']}</Nav.Link>
                   </Link>
                 )
               }

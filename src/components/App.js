@@ -19,7 +19,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/search" component={Search} />
       <Route exact path="/restaurants/:category" component={RestaurantList} />
-      <Route path="/restaurant/:category/:restaurantId" component={RestaurantDetails} /> 
+      <Route path="/restaurant/:restaurantId" component={RestaurantDetails} /> 
       <Route component={Footer} />
 
     </BrowserRouter>

@@ -18,7 +18,7 @@ class Reviews extends Component {
                       <footer className="blockquote-footer">
                         {review.review}
                         <br />
-                        <cite title="Source Title">{review.author}</cite>
+                        <cite title="Source Title">{review.user.name}</cite>
                         <span className="rate">
                           <StarRatingComponent
                             name="rate1"

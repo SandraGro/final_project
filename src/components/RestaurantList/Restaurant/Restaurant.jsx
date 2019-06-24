@@ -4,12 +4,13 @@ import Link from 'react-router-dom/Link';
 import StarRatingComponent from 'react-star-rating-component';
 
 import './Restaurant.css';
+import { userInfo } from "os";
 
 class Restaurant extends Component {
   render() {
     return (
       <>
-        <Link className="links" to={"/restaurant/"+ this.props.info.id}>
+        <Link className="links" to={"/restaurant/" + this.props.info.id}>
           <Container className="container">
             <Row>
               <Col xs={2} className="margin-img">
@@ -27,14 +28,20 @@ class Restaurant extends Component {
                       />
                     </div>
                     <small>
-                    {this.props.info.address}
+                      {this.props.info.address}
                     </small>
                   </Card.Header>
                   <Card.Body>
                     <blockquote className="blockquote mb-0">
                       <footer className="blockquote-footer">
-                      {this.props.info.last_review['review']} <br />
-                        <cite title="Source Title"> {this.props.info.last_review['author']}</cite>
+                        {this.props.info.reviews.map((review) => 
+                          <cite title="Source Title"> {this.props.info.reviews[0].review}
+                          </cite>
+                        )} <br /> 
+                         {this.props.info.reviews.map((review) => 
+                          <cite title="Source Title"> {this.props.info.reviews[0].user.name}
+                          </cite>
+                        )}
                       </footer>
                     </blockquote>
                   </Card.Body>

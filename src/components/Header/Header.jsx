@@ -44,7 +44,7 @@ class Header extends Component {
             <div>
             <Form inline action="/search">
               <FormControl type="text" name="q" placeholder="Search" className="mr-sm-2" />
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </Form>
             </div>
             <Login />

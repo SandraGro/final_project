@@ -5,6 +5,12 @@ import './Reviews.css'
 
 
 class Reviews extends Component {
+  constructor(props) {
+    super(props);
+    this.props = {
+      info: []
+    }
+  }
   render() {
     return (
       <>

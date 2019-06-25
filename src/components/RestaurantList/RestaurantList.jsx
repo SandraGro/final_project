@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './RestaurantList.css'
 import Title from './Title'
-import Link from 'react-router-dom/Link';
 import { getData } from '../../utils/api';
 import Restaurant from './Restaurant'
 
@@ -34,12 +33,10 @@ class RestaurantList extends Component {
     render() {
         return (
             <>
-                <Link className="links" to="/" >
-                    <Title titulo={this.props.match.params.category} />
-                    {this.state.restaurants.map((restaurant) =>
-                        <Restaurant key={restaurant.id} info={restaurant} category={this.props.match.params.category} />
-                    )}
-                </Link>
+                <Title titulo={this.props.match.params.category} />
+                {this.state.restaurants.map((restaurant) =>
+                    <Restaurant key={restaurant.id} info={restaurant} category={this.props.match.params.category} />
+                )}
             </>
         );
     }

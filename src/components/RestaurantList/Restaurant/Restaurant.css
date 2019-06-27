@@ -1,6 +1,7 @@
 
 .card{
     border: none;
+    min-height: 190px; 
 }
 
 .card-header{
@@ -13,6 +14,7 @@
 
 .images{
     width: 250px;
+
     
 }
 

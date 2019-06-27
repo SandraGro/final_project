@@ -41,7 +41,7 @@ function postData(path, data) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
-        }).then(checkResponse).then(parseResponse).catch(handleError);
+        }).then(checkResponse).then(parseResponse);
 }
 
 function patchData(path, id, data) {

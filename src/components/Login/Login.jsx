@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button, Modal } from 'react-bootstrap';
+import { postData } from '../../utils/api';
 import './Login.css';
 
 
@@ -10,8 +11,10 @@ class Login extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.sendForm = this.sendForm.bind(this);
 
     this.state = {
+      error: false,
       show: false,
     };
   }
@@ -22,6 +25,23 @@ class Login extends Component {
 
   handleShow() {
     this.setState({ show: true });
+  }
+
+  sendForm(event) {
+    this.setState({ error: false })
+    // se convierte formulario en json
+    const formData = new FormData(event.target);
+    var object = {};
+    formData.forEach(function (value, key) {
+      object[key] = value;
+    });
+    postData('login', object).then((output) => {
+      localStorage.setItem('userToken', output.token);
+      this.handleClose();
+    }).catch(err => {
+      this.setState({ error: "Incorrect user or password." });
+    });
+    event.preventDefault();
   }
 
   render() {
@@ -36,10 +56,11 @@ class Login extends Component {
             <Modal.Title className="title-logIn">Log In</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
+            <form onSubmit={this.sendForm}>
+              <Form.Text className="text-danger" style={this.state.error ? {} : { display: 'none' }}>{this.state.error}</Form.Text>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" name="email" placeholder="Enter email" />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
     </Form.Text>
@@ -47,15 +68,13 @@ class Login extends Component {
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" name="password" placeholder="Password" />
               </Form.Group>
-              <Form.Group controlId="formBasicChecbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
+              
               <Button variant="secondary" type="submit">
                 Log In
   </Button>
-            </Form>
+            </form>
           </Modal.Body>
           {/* <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>

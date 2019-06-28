@@ -46,6 +46,7 @@ class SignUp extends Component {
     });
 
     postData('register', object).then((output) => {
+      localStorage.setItem('userToken', output.token);
       this.handleClose();
       this.handleSuccessShow();
       //todo: Login
@@ -75,7 +76,6 @@ class SignUp extends Component {
                 required
                 type="text"
                 placeholder="First name"
-                defaultValue="Mark"
                 name='name'
               />
               <Form.Group controlId="formBasicEmail">

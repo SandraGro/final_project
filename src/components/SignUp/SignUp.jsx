@@ -21,6 +21,7 @@ class SignUp extends Component {
   }
   handleSuccessClose() {
     this.setState({ showSuccess: false });
+    window.location.reload();
   }
 
   handleSuccessShow() {
@@ -49,7 +50,6 @@ class SignUp extends Component {
       localStorage.setItem('userToken', output.token);
       this.handleClose();
       this.handleSuccessShow();
-      //todo: Login
     }).catch(err => {
       this.setState({ error: "User already exists." });
     });

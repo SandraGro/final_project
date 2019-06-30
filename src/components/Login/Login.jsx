@@ -38,11 +38,13 @@ class Login extends Component {
     postData('login', object).then((output) => {
       localStorage.setItem('userToken', output.token);
       this.handleClose();
+      window.location.reload();
     }).catch(err => {
       this.setState({ error: "Incorrect user or password." });
     });
     event.preventDefault();
   }
+
 
   render() {
     return (

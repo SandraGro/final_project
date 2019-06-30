@@ -40,6 +40,18 @@
   border-color: #bac64a;
 }
 
+.btn-outline-success:not(:disabled):not(.disabled):active{
+  color: #fff !important;
+  background-color: #bac64a;
+  border-color: #bac64a;
+}
+
+.btn-outline-success:disabled {
+  color: #fff !important;
+  background-color: lightgray;
+  border-color: lightgray;
+  cursor: pointer;
+}
 
 
 .btn-primary:active, .btn-primary:hover, .btn-primary, .btn-primary:focus, .btn-primary:focus-within {

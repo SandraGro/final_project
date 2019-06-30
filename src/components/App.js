@@ -7,15 +7,19 @@ import BrowserRouter from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
 import RestaurantList from './RestaurantList';
 import Search from './Search/'
-
-//CSS
-import './App.css';
 import RestaurantDetails from './RestaurantDetails/RestaurantDetails';
+import HeaderLogged from './HeaderLogged/HeaderLogged';
+import { userIsLoggedIn } from '../utils/login';
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <Route component={Header} />
+      { userIsLoggedIn()
+        ? <Route component={HeaderLogged} />
+        : <Route component={Header} />
+      }
+
       <Route exact path="/" component={Home} />
       <Route exact path="/search" component={Search} />
       <Route exact path="/restaurants/:category" component={RestaurantList} />

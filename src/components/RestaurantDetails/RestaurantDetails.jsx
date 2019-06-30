@@ -37,8 +37,8 @@ class RestaurantDetails extends Component {
         <Row>
           <Col xs={8} className="margin-img">
             {/* <ImagesRestaurant imgs={this.state.restaurant.images} /> */}
-            <AddInput />
-              <Reviews info={this.state.restaurant.reviews} />
+            <AddInput restaurantId={this.state.restaurant.id} />
+              <Reviews info={this.state.restaurant.reviews}/>
           </Col>
           <Col xs={4} className="margin-img">
             <Location address={this.state.restaurant.address} rating={this.state.restaurant.rating} />

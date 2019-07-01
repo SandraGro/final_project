@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './RestaurantDetails.css'
 import { Col, Row } from 'react-bootstrap';
 import Title from "../RestaurantList/Title";
-// import ImagesRestaurant from "./ImagesRestaurant";
+import ImagesRestaurant from "./ImagesRestaurant";
 import Location from './Location';
 import Reviews from "./Reviews/";
 import AddInput from "./Reviews/AddInput";
@@ -15,7 +15,7 @@ class RestaurantDetails extends Component {
     super(props);
     this.state = {
       restaurant: {
-        images: [],
+        images: "",
         reviews: []
       }
     }
@@ -36,7 +36,7 @@ class RestaurantDetails extends Component {
         <Title titulo={this.state.restaurant.name} />
         <Row>
           <Col xs={8} className="margin-img">
-            {/* <ImagesRestaurant imgs={this.state.restaurant.images} /> */}
+            <ImagesRestaurant imgs={this.state.restaurant.images} />
             <AddInput restaurantId={this.state.restaurant.id} />
               <Reviews info={this.state.restaurant.reviews}/>
           </Col>

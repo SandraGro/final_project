@@ -40,6 +40,7 @@ class Reviews extends Component {
               <>
                 <Card className="card">
                   <Card.Body>
+                    <img src={'https://i.pravatar.cc/50?id=' + review.user.id} alt={review.user.name}/>
                     <blockquote className="blockquote mb-0">
                       <footer className="blockquote-footer">
                         {review.review}

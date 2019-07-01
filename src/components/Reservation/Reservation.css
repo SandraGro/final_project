@@ -1,5 +1,16 @@
 .reservation {
-    background-color: yellowgreen;
+    border-color: #CCC;
     margin-top: 100px;
     height: 300px;
+}
+.calendar{
+    margin-right: 10px;
+}
+
+.dayPicker{
+    display: grid;
+}
+
+.timePicker{
+    width: 90px;
 }

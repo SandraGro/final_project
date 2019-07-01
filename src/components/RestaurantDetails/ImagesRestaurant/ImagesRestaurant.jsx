@@ -10,10 +10,10 @@ class ImagesRestaurant extends Component {
         <br />
         <div className="images-rest">
           <CardGroup>
-            {
-              this.props.imgs.map((img) => {
+            { this.props.imgs &&
+              this.props.imgs.split(",").map((img) => {
                 return <Card>
-                  <Card.Img variant="top" src={img}/>
+                  <Card.Img variant="top" src={img.trim()}/>
                 </Card>
               })
             }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from 'react-bootstrap';
-import { userIsLoggedIn } from '../../../../utils/login';
+import { userIsLoggedIn, getUserDetails } from '../../../../utils/login';
 import StarRatingComponent from 'react-star-rating-component';
 import { postData } from '../../../../utils/api';
 import './AddInput.css';
@@ -23,7 +23,10 @@ class AddInput extends Component {
       object[key] = value;
     });
 
+    let userDetails = getUserDetails()
+
     object['restaurantId'] = this.props.restaurantId;
+    object['userId'] = userDetails.id
 
     postData('review', object).then(() => {
       //ToDo: Vaciar campo de review

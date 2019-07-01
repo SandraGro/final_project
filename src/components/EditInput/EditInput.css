@@ -1,0 +1,22 @@
+.btn-outline-success:active{
+    margin: 0;
+}
+
+.btn-outline-success {
+    color: #bac64a;
+    border-color: #bac64a;
+}
+
+.input-review{
+    width: 750px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.review-form{
+    margin: 20px;
+}
+
+.rating{
+    margin-left: 20px; 
+}

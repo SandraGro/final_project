@@ -15,6 +15,9 @@ function logoutUser(){
 }
 
 function getUserDetails(){
+    if(!userIsLoggedIn()){
+        return {};
+    }
     let userToken = localStorage.getItem("userToken");
     return decode(userToken)
 }

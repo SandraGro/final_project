@@ -1,16 +1,36 @@
 import React, { Component } from "react";
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
+import { deleteData } from '../../../utils/api';
+import EditInput from '../../EditInput/EditInput';
+import { getUserDetails } from '../../../utils/login';
+
 import './Reviews.css'
 
 
 class Reviews extends Component {
   constructor(props) {
     super(props);
+    this.deleteReview = this.deleteReview.bind(this);
     this.props = {
-      info: []
+      info: [],
+      userDetails: {},
+      editing: 0
     }
   }
+
+  componentDidMount() {
+    let userDetails = getUserDetails();
+    this.setState({ userDetails })
+  }
+
+  deleteReview(id) {
+    deleteData('review', id).then(res => {
+      window.location.reload();
+    });
+  }
+
+
   render() {
     return (
       <>
@@ -24,6 +44,9 @@ class Reviews extends Component {
                       <footer className="blockquote-footer">
                         {review.review}
                         <br />
+                        {
+                          this.state.editing === review.id &&<EditInput review={review}/>
+                        }
                         <cite title="Source Title">{review.user.name}</cite>
                         <span className="rate">
                           <StarRatingComponent
@@ -33,6 +56,19 @@ class Reviews extends Component {
                             editing={false}
                           />
                         </span>
+                        {this.state.userDetails.id === review.user.id
+                          // eslint-disable-next-line
+                          ? 
+                            <div>
+                            <Button onClick={() => this.deleteReview(review.id)} variant="light" size="sm">Delete</Button>
+                            <Button onClick={() => this.setState({
+                              editing: review.id
+                            })} variant="light" size="sm">Edit</Button>
+
+                            </div>
+                         
+                          : (<></>)
+                        }
                       </footer>
                     </blockquote>
                   </Card.Body>

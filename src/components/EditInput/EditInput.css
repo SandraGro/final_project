@@ -8,15 +8,20 @@
 }
 
 .input-review-edit{
-    width: 440px;
-    display: inline-block;
+    width: 540px;
+    display: block;
     margin: 0 10px 0 0;
 }
 
-.review-form{
-    margin: 20px;
+.edit-form{
+    margin: 0;
 }
 
 .ratingEdit{
     margin-left: 0px; 
+}
+
+.update-btn{
+    float: right;
+    margin-top: 5px;
 }

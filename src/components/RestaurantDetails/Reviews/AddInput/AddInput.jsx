@@ -41,7 +41,6 @@ class AddInput extends Component {
   render() {
     return (
       <>
-        <br />
         <div className="review-form">
           <form onSubmit={this.submitReview}>
             {userIsLoggedIn()

@@ -41,24 +41,24 @@ class Reviews extends Component {
                 <Card className="card">
                   <Card.Body>
                     <Row>
-                      <Col xs={2}>
-                        <img src={'https://i.pravatar.cc/50?id=' + review.user.id} alt={review.user.name} />
+                       <Col xs={2}>
+                        <img src={'https://i.pravatar.cc/50?u=' + review.user.id} alt={review.user.name} />
                         <br/>
                         <cite title="Source Title">{review.user.name}</cite>
                       </Col>
                       <Col xs={8}>
-                        <blockquote className="blockquote mb-0">
-                          <footer className="blockquote-footer">
-                            {review.review}
-                            <br />
-                            <span className="rate">
+                      {this.state.editing !== review.id && (<blockquote className="blockquote-footer">
+                          {review.review}
+                        </blockquote>)}
+                          <div>
+                           {this.state.editing !== review.id && (<span className="rate">
                               <StarRatingComponent
                                 name="rate1"
                                 starCount={5}
                                 value={review.rating}
                                 editing={false}
                               />
-                            </span>
+                            </span>)}
                             {
                               this.state.editing === review.id && <EditInput review={review} />
                             }
@@ -76,8 +76,7 @@ class Reviews extends Component {
 
                               : (<></>)
                             }
-                          </footer>
-                        </blockquote>
+                          </div>
                       </Col>
                     </Row>
                   </Card.Body>

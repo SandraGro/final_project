@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Button } from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
 import { userIsLoggedIn } from '../../utils/login';
-import {patchData} from '../../utils/api';
+import { patchData } from '../../utils/api';
 import './EditInput.css';
 
 
@@ -34,13 +34,13 @@ class editInput extends Component {
     event.preventDefault();
   }
 
-  onSetReview(event){
+  onSetReview(event) {
     this.setState({
-        editedText: event.target.value
+      editedText: event.target.value
     })
   }
 
-  onSetRating(newRating, old, name){
+  onSetRating(newRating, old, name) {
     this.setState({
       editedRating: newRating
     })
@@ -49,13 +49,11 @@ class editInput extends Component {
   render() {
     return (
       <>
-        <br />
-        <div className="review-form">
+        <div className="edit-form">
           <form onSubmit={this.editReview}>
             {userIsLoggedIn()
               ? <>
-                <Form.Control size="sm" type="text" value={this.state.editedText} className="input-review-edit" name="reviewEdit" onChange={this.onSetReview} />
-                <Button variant="outline-success" size="sm" type="submit">Post </Button>
+                <Form.Control as="textarea" rows="3" size="sm" type="text" value={this.state.editedText} className="input-review-edit" name="reviewEdit" onChange={this.onSetReview} />
                 <StarRatingComponent className="ratingEdit"
                   name="editRatingEdit"
                   starCount={5}
@@ -63,6 +61,7 @@ class editInput extends Component {
                   editing={true}
                   onStarClick={this.onSetRating}
                 />
+                <Button className="update-btn" variant="outline-success" size="sm" type="submit">Update </Button>
                 <div><small className="text-danger" style={this.state.error ? {} : { display: 'none' }}>{this.state.error}</small></div>
               </>
               : <></>

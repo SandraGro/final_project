@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Modal } from 'react-bootstrap';
+import './ModalReservation.css'
 
 
 class ModalReservation extends Component {
@@ -29,9 +30,9 @@ class ModalReservation extends Component {
           Find a table
         </Button>
 
-        <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title className="textTitle">Approved reservation!</Modal.Title>
+        <Modal dialogClassName="modalReservation" show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header className="headerRervation" closeButton>
+            <Modal.Title className="textTitle">Reservation</Modal.Title>
           
           </Modal.Header>
           <Modal.Body>The details of your reservation have been sent to your email</Modal.Body>

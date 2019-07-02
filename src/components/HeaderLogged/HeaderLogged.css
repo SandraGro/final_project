@@ -7,3 +7,10 @@ img.sizeImg.rounded {
 .userName{
     margin-right: 30px; 
 }
+
+@media (max-width: 600px){
+   .imgUser{
+     display: none;
+   }
+   
+}

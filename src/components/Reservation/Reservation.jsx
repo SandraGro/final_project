@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Reservation.css'
-import { Card } from 'react-bootstrap';
+import { Card, Row, Col} from 'react-bootstrap';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 import 'rc-time-picker/assets/index.css';
@@ -15,23 +15,39 @@ class Reservation extends Component {
     return (
       <>
         <div className="reservation">
+
           <Card style={{ width: '18rem' }}>
             <Card.Body>
-              <Card.Title> <i class="far fa-calendar-alt calendar fa-lg" ></i> Reservations</Card.Title>
-
+              <Card.Header>
+                <Card.Title>
+                  <i class="far fa-calendar-alt calendar fa-lg" ></i> Reservations
+                </Card.Title>
+              </Card.Header>
             </Card.Body>
-            <DayPickerInput className="dayPiker" onDayChange={day => console.log(day)} />
+            <Row>
+              <Col lg={12}>
+                <DayPickerInput classNames={{container:"dayContainer"}} inputProps={{className:"dayPicker"}} onDayChange={day => console.log(day)} />
+              </Col>
+            </Row>
+            <Row>
+            <Col lg={6}>
 
-            <TimePicker
-              showSecond={false}
-              className="timePicker"
-              defaultValue={moment().hour(0).minute(0)}
-              format={'h:mm a'}
-              use12Hours
-              inputReadOnly />
-            <input className="timePicker" type="number" />
+              <TimePicker
+                showSecond={false}
+                defaultValue={moment().hour(0).minute(0)}
+                format={'h:mm a'}
+                use12Hours
+                inputReadOnly />
+            </Col>
+            <Col lg={6}>
+              <input className="numberInput" type="number" placeholder="2 people" />
+
+            </Col>
+             </Row>
+
             <ModalReservation />
           </Card>
+
         </div>
       </>
     );

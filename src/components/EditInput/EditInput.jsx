@@ -29,7 +29,7 @@ class editInput extends Component {
     patchData('review', this.props.review.id, request).then(() => {
       window.location.reload();
     }).catch(err => {
-      this.setState({ error: "Something went wrong, make sure your review is not empty and try again." });
+      this.setState({ error: "Make sure your review and rating are not empty and try again." });
     });
     event.preventDefault();
   }
@@ -54,10 +54,10 @@ class editInput extends Component {
           <form onSubmit={this.editReview}>
             {userIsLoggedIn()
               ? <>
-                <Form.Control size="sm" type="text" value={this.state.editedText} className="input-review" name="review" onChange={this.onSetReview} />
+                <Form.Control size="sm" type="text" value={this.state.editedText} className="input-review-edit" name="reviewEdit" onChange={this.onSetReview} />
                 <Button variant="outline-success" size="sm" type="submit">Post </Button>
-                <StarRatingComponent className="rating"
-                  name="editRating"
+                <StarRatingComponent className="ratingEdit"
+                  name="editRatingEdit"
                   starCount={5}
                   value={this.state.editedRating}
                   editing={true}

@@ -51,7 +51,7 @@ class HeaderLogged extends Component {
               </Form>
             </div>
           </Navbar.Collapse>
-          <Image className="sizeImg" src="../../../assets/perfil.jpg" rounded />
+          <Image className="sizeImg imgUser" src={'https://i.pravatar.cc/50?id='}  alt="" rounded />
           <DropdownButton id="dropdown-basic-button" title={this.state.userDetails.name}>
             <Dropdown.Item onClick={logoutUser}>Log out</Dropdown.Item>
           </DropdownButton>

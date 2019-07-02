@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Col, Row } from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
 import { deleteData } from '../../../utils/api';
 import EditInput from '../../EditInput/EditInput';
@@ -40,38 +40,46 @@ class Reviews extends Component {
               <>
                 <Card className="card">
                   <Card.Body>
-                    <img src={'https://i.pravatar.cc/50?id=' + review.user.id} alt={review.user.name}/>
-                    <blockquote className="blockquote mb-0">
-                      <footer className="blockquote-footer">
-                        {review.review}
-                        <br />
-                        {
-                          this.state.editing === review.id &&<EditInput review={review}/>
-                        }
+                    <Row>
+                      <Col xs={2}>
+                        <img src={'https://i.pravatar.cc/50?id=' + review.user.id} alt={review.user.name} />
+                        <br/>
                         <cite title="Source Title">{review.user.name}</cite>
-                        <span className="rate">
-                          <StarRatingComponent
-                            name="rate1"
-                            starCount={5}
-                            value={review.rating}
-                            editing={false}
-                          />
-                        </span>
-                        {this.state.userDetails.id === review.user.id
-                          // eslint-disable-next-line
-                          ? 
-                            <div>
-                            <Button onClick={() => this.deleteReview(review.id)} variant="light" size="sm">Delete</Button>
-                            <Button onClick={() => this.setState({
-                              editing: review.id
-                            })} variant="light" size="sm">Edit</Button>
+                      </Col>
+                      <Col xs={8}>
+                        <blockquote className="blockquote mb-0">
+                          <footer className="blockquote-footer">
+                            {review.review}
+                            <br />
+                            <span className="rate">
+                              <StarRatingComponent
+                                name="rate1"
+                                starCount={5}
+                                value={review.rating}
+                                editing={false}
+                              />
+                            </span>
+                            {
+                              this.state.editing === review.id && <EditInput review={review} />
+                            }
 
-                            </div>
-                         
-                          : (<></>)
-                        }
-                      </footer>
-                    </blockquote>
+                            {this.state.userDetails.id === review.user.id
+                              // eslint-disable-next-line
+                              ?
+                              <div>
+                                <Button onClick={() => this.deleteReview(review.id)} variant="light" size="sm" className="delete-Btn">Delete</Button>
+                                <Button onClick={() => this.setState({
+                                  editing: review.id
+                                })} variant="light" size="sm">Edit</Button>
+
+                              </div>
+
+                              : (<></>)
+                            }
+                          </footer>
+                        </blockquote>
+                      </Col>
+                    </Row>
                   </Card.Body>
                 </Card>
                 <hr />

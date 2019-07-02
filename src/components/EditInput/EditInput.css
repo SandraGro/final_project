@@ -7,16 +7,16 @@
     border-color: #bac64a;
 }
 
-.input-review{
-    width: 750px;
+.input-review-edit{
+    width: 440px;
     display: inline-block;
-    margin: 20px;
+    margin: 0 10px 0 0;
 }
 
 .review-form{
     margin: 20px;
 }
 
-.rating{
-    margin-left: 20px; 
+.ratingEdit{
+    margin-left: 0px; 
 }

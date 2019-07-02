@@ -20,10 +20,11 @@ class Restaurant extends Component {
           <Link className="links" to={"/restaurant/" + this.props.info.id}>
             <Container className="container">
               <Row>
-                <Col xs={2} className="margin-img">
+                
+                <Col sm xs={12} md lg={2} className="margin-img">
                   <Card.Img variant="top" src={this.props.info.image} className="images" />
                 </Col>
-                <Col xs={10}>
+                <Col sm xs={12} md lg={10}> 
                   <Card className="card">
                     <Card.Header className="card-header"><h5>{this.props.info.name}</h5>
                       <div>

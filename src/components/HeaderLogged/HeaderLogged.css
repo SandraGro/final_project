@@ -8,6 +8,10 @@ img.sizeImg.rounded {
     margin-right: 30px; 
 }
 
+.inputSearch{
+  margin: 5px 0;
+}
+
 @media (max-width: 600px){
    .imgUser{
      display: none;

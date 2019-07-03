@@ -43,12 +43,15 @@ class Header extends Component {
             </Nav>
             <div>
             <Form inline action="/search">
-              <FormControl type="text" name="q" placeholder="Search" className="mr-sm-2" />
+              <FormControl type="text" name="q" placeholder="Search" className=" inputSearch mr-sm-2" />
               <i className="searchIcon fas fa-search"></i>
             </Form>
             </div>
+            <div>
             <Login/>
             <SignUp/>
+
+            </div>
           </Navbar.Collapse>
         </Navbar>
       </>

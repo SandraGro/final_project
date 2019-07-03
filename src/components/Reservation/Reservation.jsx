@@ -30,7 +30,7 @@ class Reservation extends Component {
               </Col>
             </Row>
             <Row>
-            <Col lg={6}>
+            <Col lg={6} className="timePicker">
 
               <TimePicker
                 showSecond={false}

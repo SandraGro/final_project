@@ -6,6 +6,11 @@
     padding-right: 3.5rem !important;
 }
 
+.inputSearch{
+    margin: 5px 0;
+}
+
+
 @media (max-width: 600px){
     .searchIcon{
       display: none;

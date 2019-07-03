@@ -46,8 +46,8 @@ class HeaderLogged extends Component {
             </Nav>
             <div>
               <Form inline action="/search">
-                <FormControl type="text" name="q" placeholder="Search" className="mr-sm-2" />
-                <i className="fas fa-search"></i>
+                <FormControl type="text" name="q" placeholder="Search" className="inputSearch mr-sm-2" />
+                <i className=" searchIcon fas fa-search"></i>
               </Form>
             </div>
           </Navbar.Collapse>

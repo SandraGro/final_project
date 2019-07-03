@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3001';
+//const API_URL = 'http://localhost:3001';
+const API_URL = "https://weman-connect-sagf.mybluemix.net";
 
 function parseResponse(response) {
     return response.json();

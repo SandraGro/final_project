@@ -25,7 +25,7 @@ class SelectorHome extends Component {
     return (
       <>
         <div className="padd">
-          <p className="title">¿Qué estás buscando?</p>
+          <p className="title">What are you craving?</p>
           <CardDeck>
             {
               this.state.categories.map((category) => {

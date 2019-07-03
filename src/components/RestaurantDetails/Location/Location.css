@@ -1,3 +1,7 @@
+.address{
+    padding: 0 5px 0 10px;
+}
+
 .margin-img {
     margin: 0;
 }
@@ -7,3 +11,9 @@
     width: 100%;
     margin-top: 20px;
 }
+
+@media (max-width: 600px){
+    .address{
+        margin-left: 15px;
+    }
+ }

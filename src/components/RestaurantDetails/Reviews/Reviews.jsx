@@ -12,6 +12,7 @@ class Reviews extends Component {
   constructor(props) {
     super(props);
     this.deleteReview = this.deleteReview.bind(this);
+    this.reviewEdited = this.reviewEdited.bind(this);
     this.props = {
       info: [],
       userDetails: {},
@@ -26,10 +27,16 @@ class Reviews extends Component {
 
   deleteReview(id) {
     deleteData('review', id).then(res => {
-      window.location.reload();
+      this.props.refresh();
     });
   }
 
+  reviewEdited(){
+    this.setState({
+      editing: 0
+    });
+    this.props.refresh();
+  }
 
   render() {
     return (
@@ -60,7 +67,7 @@ class Reviews extends Component {
                               />
                             </span>)}
                             {
-                              this.state.editing === review.id && <EditInput review={review} />
+                              this.state.editing === review.id && <EditInput refresh={this.reviewEdited} review={review} />
                             }
 
                             {this.state.userDetails.id === review.user.id

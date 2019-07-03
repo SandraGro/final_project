@@ -32,9 +32,11 @@ class Location extends Component {
             editing={false}
           />
         </div>
+        <div className="address">
         <small>
           {this.props.address}
         </small>
+        </div>
       </div>
     );
   }

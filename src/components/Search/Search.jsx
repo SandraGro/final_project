@@ -21,7 +21,6 @@ class Search extends Component {
     this.setState({
       title: values.q 
     })
-    // path = "search?q=loqueseaa"
     getData(path).then(restaurants => this.setState({ restaurants }))
   }
 

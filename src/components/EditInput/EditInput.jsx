@@ -27,7 +27,8 @@ class editInput extends Component {
       rating: this.state.editedRating
     }
     patchData('review', this.props.review.id, request).then(() => {
-      window.location.reload();
+      this.props.refresh();
+      this.setState({error: false});
     }).catch(err => {
       this.setState({ error: "Make sure your review and rating are not empty and try again." });
     });

@@ -12,5 +12,8 @@ img.sizeImg.rounded {
    .imgUser{
      display: none;
    }
-   
+     .searchIcon{
+      display: none;
+    }
+
 }
